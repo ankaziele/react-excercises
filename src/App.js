@@ -11,8 +11,8 @@ class App extends Component {
 
   addContact = name => {
     this.setState({
-      previousState: this.state,
       contacts: this.state.contacts.concat({
+        id: Date.now(),
         name: name
       })
     })
@@ -27,7 +27,7 @@ class App extends Component {
 
          this.state.contacts.map(
            contact => (
-             <li>{contact.name}</li>
+             <li key={contact.id}>{contact.name}</li>
            )
          )
          }
