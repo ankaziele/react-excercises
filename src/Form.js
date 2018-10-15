@@ -6,7 +6,7 @@ state = {
 }
 
 handleChange = event => {
-    this.setState({[event.target.name]: event.target.value})
+    this.setState({name: event.target.value})
 }
 
 handleSubmit = event => {
