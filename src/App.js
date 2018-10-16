@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import Counter from './components/counter'
+import {BrowserRouter as Router, Route, NavLink} from 'react-router-dom'
+import Counter from './counter'
 import Form from './Form'
 import NewForm from './NewForm'
+import StudentsView from './components/StudentsView/StudnetsView'
 import './App.css';
 
 class App extends Component {
@@ -36,6 +38,7 @@ class App extends Component {
        <Form addContactFunction={this.addContact}/>
        <NewForm addDataFunction={this.addData} />
        <Counter />
+       
        <ul>
          {
 
@@ -57,6 +60,19 @@ class App extends Component {
          )
          }
        </ul>
+
+       <Router>
+         <div>
+
+         <ul>
+           <li><NavLink to ="/students">Students</NavLink></li>
+         </ul>
+
+         <Route exact path="/students" component={StudentsView}/>
+         </div>
+
+         
+       </Router>
       </div>
     );
   }
