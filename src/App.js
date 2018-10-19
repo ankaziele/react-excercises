@@ -3,6 +3,8 @@ import {BrowserRouter as Router, Route, NavLink} from 'react-router-dom'
 import Counter from './counter'
 import Form from './Form'
 import NewForm from './NewForm'
+import Title from './Title'
+import Footer from './Footer'
 import StudentsView from './components/StudentsView/StudnetsView'
 import './App.css';
 
@@ -10,7 +12,8 @@ class App extends Component {
 
   state = {
     contacts: [],
-    data: []
+    data: [],
+    title: `Hello I'm props`,
   }
 
   addContact = name => {
@@ -35,9 +38,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      
        <Form addContactFunction={this.addContact}/>
        <NewForm addDataFunction={this.addData} />
+       <Title title={this.state.title}/>
+       <Title title={"other awesome title"}/>
+
        <Counter />
+       <Footer title={this.state.title}/>
        
        <ul>
          {

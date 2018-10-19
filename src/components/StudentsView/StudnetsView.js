@@ -17,6 +17,7 @@ class StudentsView extends Component {
     return (
       <div>
         <h1>Students View</h1>
+        <p>{this.props.title}</p>
         <ul>
           {this.state.students.map(student => (
             <p key={student.id}>
