@@ -7,6 +7,7 @@ import Title from './Title'
 import Footer from './Footer'
 import StudentsView from './components/StudentsView/StudnetsView'
 import ShoppingList from './ShoppingList'
+// import ShoppingListItems from './ShoppingListItems'
 import './App.css';
 
 class App extends Component {
@@ -15,7 +16,7 @@ class App extends Component {
     contacts: [],
     data: [],
     title: `Hello I'm props`,
-    
+
   }
 
   addContact = name => {
@@ -85,6 +86,7 @@ class App extends Component {
        </Router>
 
        <ShoppingList />
+       {/* <ShoppingListItems /> */}
       </div>
     );
   }

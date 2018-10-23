@@ -1,19 +1,35 @@
 import React, { Component } from "react";
+import ShoppigCategory from './ShoppingCategory'
 
 class ShoppingList extends Component {
   state = {
     categories: [
       {
         id: 1,
-        name: "Food"
+        name: "Food",
+        ListItems: [
+            "Bread",
+            "Butter",
+            "Milk"
+        ]
       },
       {
         id: 2,
-        name: "Cloths"
+        name: "Cloths",
+        ListItems: [
+            "Hat",
+            "T-shirt",
+            "Shoes"
+        ]
       },
       {
         id: 3,
-        name: "Paper"
+        name: "Paper",
+        ListItems: [
+            "Glue",
+            "Notebook",
+            "Pen"
+        ]
       }
     ]
   };
@@ -23,9 +39,7 @@ class ShoppingList extends Component {
         <h1>My Shopping List</h1>
         <h2>Things I need to buy</h2>
         <ul>
-          {this.state.categories.map(category => (
-            <ol key={category.id}>{category.name} </ol>
-          ))}
+            <ShoppigCategory categories={this.state.categories}/>
         </ul>
       </div>
     );
