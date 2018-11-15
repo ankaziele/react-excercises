@@ -15,7 +15,7 @@ class Counter extends Component {
 
   render() {
     return (
-      <div style = {{ display: 'flex', flexDirection: 'column', fontSize: 50 }}>
+      <div >
         <img src={this.state.imageUrl} alt="picsumPhoto"/>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button
