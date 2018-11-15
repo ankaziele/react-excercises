@@ -6,6 +6,12 @@ class Counter extends Component {
     imageUrl: 'https://picsum.photos/200'
   };
 
+  styles = {
+    display: 'flex',
+    flexDirection: 'column',
+    width: '30%'
+  }
+
   handleIncrement = product => {
     console.log("Increment clicked");
     this.setState({count: this.state.count +1})
@@ -13,7 +19,7 @@ class Counter extends Component {
 
   render() {
     return (
-      <div>
+      <div style = { this.styles }>
         <img src={this.state.imageUrl} alt="picsumPhoto"/>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button
