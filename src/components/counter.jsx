@@ -2,7 +2,8 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   state = {
-    count: 0
+    count: 0,
+    imageUrl: 'https://picsum.photos/200'
   };
 
   handleIncrement = product => {
@@ -13,6 +14,7 @@ class Counter extends Component {
   render() {
     return (
       <div>
+        <img src={this.state.imageUrl} alt="picsumPhoto"/>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button
           onClick={() => this.handleIncrement()}
