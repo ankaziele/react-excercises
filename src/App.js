@@ -4,7 +4,6 @@ import Navbar from "./components/Navbar";
 import "./App.css";
 
 class App extends Component {
-
   state = {
     counters: [
       { id: 1, value: 0 },
@@ -40,14 +39,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar />
+        <Navbar 
+        totalCounters = {this.state.counters.filter(counter => counter.value > 0).length}
+        />
         <main className="container">
-          <Counters 
-          counters = {this.state.counters}
-          onIncrement = {this.handleIncrement}
-          onReset = {this.handleReset}
-          onDelete = {this.handleDelete}
-          />  
+          <Counters
+            counters={this.state.counters}
+            onIncrement={this.handleIncrement}
+            onReset={this.handleReset}
+            onDelete={this.handleDelete}
+          />
         </main>
       </div>
     );
